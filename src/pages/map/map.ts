@@ -37,8 +37,6 @@ export class MapPage {
           alert('Please Turn On Your GPS!');
       })
       .catch((e) => alert(JSON.stringify(e)))
-
-
     });
   }
 
