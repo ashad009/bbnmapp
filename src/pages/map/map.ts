@@ -5,6 +5,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMapsProvider } from '../../providers/google-maps/google-maps';
 import { LocationsProvider } from '../../providers/locations/locations';
 import { Diagnostic } from '@ionic-native/diagnostic';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 declare var google;
 
@@ -22,7 +23,8 @@ export class MapPage {
     private geolocation: Geolocation,
     private maps: GoogleMapsProvider,
     private locationProvider: LocationsProvider,
-    private diagnostic: Diagnostic
+    private diagnostic: Diagnostic,
+    private loadingProvider: LoadingProvider
   ) {
   }
 
@@ -42,16 +44,20 @@ export class MapPage {
 
   private render(){
     var self = this;
+    self.loadingProvider.showLoading();
     let mapLoaded = self.maps.init(this.mapElement.nativeElement);
     let locationLoaded = self.locationProvider.load();
 
     Promise.all([mapLoaded,locationLoaded])
     .then((result) =>{
-
+      self.loadingProvider.stopLoading();
         let locations = result[1];
         locations.forEach(location => {
           self.maps.addMarker(location);
         });
+    }).catch((e) => {
+      self.loadingProvider.stopLoading();
+      alert(JSON.stringify(e));
     });
   }
 

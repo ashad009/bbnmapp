@@ -13,6 +13,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { LocationsProvider } from '../providers/locations/locations';
 import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { HttpModule } from '@angular/http';
+import { LoadingProvider } from '../providers/loading/loading';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpModule } from '@angular/http';
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LocationsProvider,
-    GoogleMapsProvider
+    GoogleMapsProvider,
+    LoadingProvider
   ]
 })
 export class AppModule {}
