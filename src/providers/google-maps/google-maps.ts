@@ -56,6 +56,7 @@ export class GoogleMapsProvider {
   _addMarker(){
     let marker = new google.maps.Marker({
       map: this.map,
+      icon: 'assets/imgs/current.png',
       animation: google.maps.Animation.DROP,
       position: this.map.getCenter()
     });
