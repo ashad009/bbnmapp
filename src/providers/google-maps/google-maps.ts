@@ -1,6 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
+import { PageNavigatorProvider } from '../../providers/page-navigator/page-navigator';
+import { ShopPage } from '../../pages/shop/shop';
+
 declare var google;
 
 @Injectable()
@@ -9,7 +12,8 @@ export class GoogleMapsProvider {
   map: any;
 
   constructor(
-    private geolocation: Geolocation) {
+    private geolocation: Geolocation,
+    private navigator: PageNavigatorProvider) {
     console.log('Hello GoogleMapsProvider Provider');
   }
 
@@ -76,8 +80,13 @@ export class GoogleMapsProvider {
     });
 
     let content = "<h4>"+location.title+"!</h4>";
+    this.handleMarkerClick(marker,location);
+  }
 
-    this.addInfoWindow(marker, content);
+  handleMarkerClick(marker,location){
+    google.maps.event.addListener(marker, 'click', () => {
+      this.navigator.navigate(ShopPage);
+    });
   }
 
   addInfoWindow(marker, content){

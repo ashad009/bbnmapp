@@ -7,20 +7,23 @@ import { Diagnostic } from '@ionic-native/diagnostic';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { MapPage} from '../pages/map/map';
-import { ListPage} from '../pages/list/list';
+import { MapPage } from '../pages/map/map';
+import { ListPage } from '../pages/list/list';
+import { ShopPage } from '../pages/shop/shop';
 import { Geolocation } from '@ionic-native/geolocation';
 import { LocationsProvider } from '../providers/locations/locations';
 import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { HttpModule } from '@angular/http';
 import { LoadingProvider } from '../providers/loading/loading';
+import { PageNavigatorProvider } from '../providers/page-navigator/page-navigator';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     MapPage,
-    ListPage
+    ListPage,
+    ShopPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { LoadingProvider } from '../providers/loading/loading';
     MyApp,
     HomePage,
     MapPage,
-    ListPage
+    ListPage,
+    ShopPage
   ],
   providers: [
     StatusBar,
@@ -42,7 +46,8 @@ import { LoadingProvider } from '../providers/loading/loading';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LocationsProvider,
     GoogleMapsProvider,
-    LoadingProvider
+    LoadingProvider,
+    PageNavigatorProvider
   ]
 })
 export class AppModule {}
