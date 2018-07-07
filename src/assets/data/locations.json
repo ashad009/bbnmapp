@@ -4,47 +4,65 @@
         {
             "title": "City Hall",
             "latitude": 40.713484,
-            "longitude": -74.006739
+            "longitude": -74.006739,
+            "price":"Man: 190, Pensonist: 170, Children: 150",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         },
         {
             "title": "Brooklyn Bridge",
             "latitude": 40.712801,
-            "longitude": -74.004936
+            "longitude": -74.004936,
+            "price":"Man: 180, Pensonist: 150, Children: 110",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         },
         {
             "title": "NYPD",
             "latitude": 40.712199,
-            "longitude": -74.001675
+            "longitude": -74.001675,
+            "price":"Man: 170, Pensonist: 100, Children: 80",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         },
         {
             "title": "The Woolworth Building",
             "latitude": 40.712443,
-            "longitude": -74.008369
+            "longitude": -74.008369,
+            "price":"Man: 160, Pensonist: 130, Children: 80",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed" 
         },
         {
             "title": "Foley Square",
             "latitude": 40.714541,
-            "longitude": -74.003091
+            "longitude": -74.003091,
+            "price":"Man: 140, Pensonist: 130, Children: 80",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         },
         {
             "title": "Sazon",
             "latitude": 40.715631,
-            "longitude": -74.008498
+            "longitude": -74.008498,
+            "price":"Man: 130, Pensonist: 120, Children: 100",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         },
         {
             "title": "Southbridge Towers",
             "latitude": 40.709206,
-            "longitude": -74.003434
+            "longitude": -74.003434,
+            "price":"Man: 120, Pensonist: 110, Children: 85",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         },
         {
             "title": "Wall St",
             "latitude": 40.707612,
-            "longitude": -74.011996
+            "longitude": -74.011996,
+            "price":"Man: 250, Pensonist: 120, Children: 90",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         },
         {
             "title": "Tribeca Grill",
             "latitude": 40.719518,
-            "longitude": -74.009807
+            "longitude": -74.009807,
+            "price":"Man: 150, Pensonist: 100, Children: 80",
+            "opening":"Man-Wed:10.00 to 18.00,  Thu to Sat : 10.00 to 19.00, Sun: Closed"
         }
     ]
 }

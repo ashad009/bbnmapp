@@ -16,6 +16,7 @@ import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { HttpModule } from '@angular/http';
 import { LoadingProvider } from '../providers/loading/loading';
 import { PageNavigatorProvider } from '../providers/page-navigator/page-navigator';
+import { ModalPage } from '../pages/modal/modal';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PageNavigatorProvider } from '../providers/page-navigator/page-navigato
     HomePage,
     MapPage,
     ListPage,
+    ModalPage,
     ShopPage
   ],
   imports: [
@@ -36,6 +38,7 @@ import { PageNavigatorProvider } from '../providers/page-navigator/page-navigato
     HomePage,
     MapPage,
     ListPage,
+    ModalPage,
     ShopPage
   ],
   providers: [

@@ -2,7 +2,9 @@
 import { Injectable } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { PageNavigatorProvider } from '../../providers/page-navigator/page-navigator';
-import { ShopPage } from '../../pages/shop/shop';
+import { ModalController } from 'ionic-angular';
+//import { ShopPage } from '../../pages/shop/shop';
+import { ModalPage } from '../../pages/modal/modal';
 
 declare var google;
 
@@ -13,7 +15,8 @@ export class GoogleMapsProvider {
 
   constructor(
     private geolocation: Geolocation,
-    private navigator: PageNavigatorProvider) {
+    private navigator: PageNavigatorProvider,
+    public modalCtrl : ModalController) {
     console.log('Hello GoogleMapsProvider Provider');
   }
 
@@ -85,7 +88,9 @@ export class GoogleMapsProvider {
 
   handleMarkerClick(marker,location){
     google.maps.event.addListener(marker, 'click', () => {
-      this.navigator.navigate(ShopPage);
+     // this.navigator.navigate(ModalPage);
+     let modal = this.modalCtrl.create(ModalPage);
+    modal.present();
     });
   }
 

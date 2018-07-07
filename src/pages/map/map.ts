@@ -30,16 +30,16 @@ export class MapPage {
 
   ionViewDidLoad(){
     var self = this;
-    self.platform.ready().then(() => {
-      self.diagnostic.isLocationEnabled()
-      .then((isAvailable) => {
-        if (isAvailable)
+    //self.platform.ready().then(() => {
+      //self.diagnostic.isLocationEnabled()
+      //.then((isAvailable) => {
+        //if (isAvailable)
           self.render();
-        else
-          alert('Please Turn On Your GPS!');
-      })
-      .catch((e) => alert(JSON.stringify(e)))
-    });
+        //else
+          //alert('Please Turn On Your GPS!');
+      //})
+      //.catch((e) => alert(JSON.stringify(e)))
+    //});
   }
 
   private render(){

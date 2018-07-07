@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { LocationsProvider } from '../../providers/locations/locations';
-import { PageNavigatorProvider } from '../../providers/page-navigator/page-navigator';
-import { ShopPage } from '../shop/shop';
+import { ModalPage } from '../modal/modal';
+import { Title } from '@angular/platform-browser';
+
 
 
 @IonicPage()
@@ -11,16 +13,24 @@ import { ShopPage } from '../shop/shop';
   templateUrl: 'list.html',
 })
 export class ListPage {
-
-  constructor(private locations: LocationsProvider,
-  private navigator : PageNavigatorProvider) {
-  }
+  constructor(
+    private locations: LocationsProvider,
+     public navCtrl: NavController,
+     public modalCtrl : ModalController) 
+     {
+       
+     }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
   }
-  navigateShop(location:any){
-    this.navigator.navigate(ShopPage);
+  public openModal(location:any){
+    console.log('Title:', location.title);
+    let modal = this.modalCtrl.create(ModalPage, {title: location.title, price: location.price, opening: location.opening });
+    modal.present();
   }
+  /*navigateShop(location:any){
+    this.navigator.navigate(ShopPage);
+  }*/
 
 }
