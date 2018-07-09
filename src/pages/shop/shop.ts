@@ -27,7 +27,7 @@ export class ShopPage {
     console.log('ionViewDidLoad ShopPage');
   }
 
-  goBack(){
+  goBack() {
     this.navigator.navigate(HomePage);
   }
 
