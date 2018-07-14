@@ -19,7 +19,7 @@ export class LocationsProvider {
 
       self.http.get('assets/data/locations.json').map(res => res.json()).subscribe(data => {
         self.data = new LocationHelper(data.locations);
-          resolve(self.data);
+        resolve(self.data);
       });
 
     });
@@ -28,42 +28,42 @@ export class LocationsProvider {
 
 }
 
-class LocationHelper{
+class LocationHelper {
 
-  constructor(public locations:any) {
-    return this.applyHaversine(locations).sort((locationA,locationB)=>{
-      return locationA.distance -locationB.distance;
+  constructor(public locations: any) {
+    return this.applyHaversine(locations).sort((locationA, locationB) => {
+      return locationA.distance - locationB.distance;
     });
   }
 
-  applyHaversine(locations:any){
+  applyHaversine(locations: any) {
     let usersLocation = {
-        lat: 40.713744,
-        lng: -74.009056
+      lat: 40.713744,
+      lng: -74.009056
     };
 
     locations.map((location) => {
 
-        let placeLocation = {
-            lat: location.latitude,
-            lng: location.longitude
-        };
+      let placeLocation = {
+        lat: location.latitude,
+        lng: location.longitude
+      };
 
-        location.distance = this.getDistanceBetweenPoints(
-            usersLocation,
-            placeLocation,
-            'miles'
-        ).toFixed(2);
+      location.distance = this.getDistanceBetweenPoints(
+        usersLocation,
+        placeLocation,
+        'miles'
+      ).toFixed(2);
     });
 
     return locations;
   }
 
-  getDistanceBetweenPoints(start, end, units){
+  getDistanceBetweenPoints(start, end, units) {
 
     let earthRadius = {
-        miles: 3958.8,
-        km: 6371
+      miles: 3958.8,
+      km: 6371
     };
 
     let R = earthRadius[units || 'miles'];
@@ -75,9 +75,9 @@ class LocationHelper{
     let dLat = this.toRad((lat2 - lat1));
     let dLon = this.toRad((lon2 - lon1));
     let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(this.toRad(lat1)) * Math.cos(this.toRad(lat2)) *
-    Math.sin(dLon / 2) *
-    Math.sin(dLon / 2);
+      Math.cos(this.toRad(lat1)) * Math.cos(this.toRad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     let d = R * c;
 
@@ -85,7 +85,7 @@ class LocationHelper{
 
   }
 
-  toRad(x){
+  toRad(x) {
     return x * Math.PI / 180;
   }
 

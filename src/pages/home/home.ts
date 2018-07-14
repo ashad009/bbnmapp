@@ -1,17 +1,23 @@
-
 import { Component } from '@angular/core';
-import { MapPage } from '../map/map';
-import { ListPage } from '../list/list';
-
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ApiProvider} from '../../providers/api/api'
+@IonicPage()
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
 export class HomePage {
+  private shops:any;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private apiProvider: ApiProvider,
+    ) {
+    apiProvider.getShopsNearMe().subscribe(data => this.shops = data.shops);
+  }
 
-  tab1Root: any = MapPage;
-  tab2Root: any = ListPage;
-
-  constructor() {}
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+  }
 
 }

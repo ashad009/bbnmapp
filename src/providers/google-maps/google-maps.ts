@@ -16,7 +16,7 @@ export class GoogleMapsProvider {
   constructor(
     private geolocation: Geolocation,
     private navigator: PageNavigatorProvider,
-    public modalCtrl : ModalController) {
+    public modalCtrl: ModalController) {
     console.log('Hello GoogleMapsProvider Provider');
   }
 
@@ -60,7 +60,7 @@ export class GoogleMapsProvider {
 
   }
 
-  _addMarker(){
+  _addMarker() {
     let marker = new google.maps.Marker({
       map: this.map,
       icon: 'assets/imgs/current.png',
@@ -73,28 +73,28 @@ export class GoogleMapsProvider {
     this.addInfoWindow(marker, content);
   }
 
-  addMarker(location:any){
+  addMarker(location: any) {
     let marker = new google.maps.Marker({
       map: this.map,
       icon: 'assets/imgs/32.png',
       animation: google.maps.Animation.DROP,
-      center : this.map.getCenter(),
+      center: this.map.getCenter(),
       position: new google.maps.LatLng(location.latitude, location.longitude)
     });
 
-    let content = "<h4>"+location.title+"!</h4>";
-    this.handleMarkerClick(marker,location);
+    let content = "<h4>" + location.title + "!</h4>";
+    this.handleMarkerClick(marker, location);
   }
 
-  handleMarkerClick(marker,location){
+  handleMarkerClick(marker, location) {
     google.maps.event.addListener(marker, 'click', () => {
-     // this.navigator.navigate(ModalPage);
-     let modal = this.modalCtrl.create(ModalPage);
-    modal.present();
+      // this.navigator.navigate(ModalPage);
+      let modal = this.modalCtrl.create(ModalPage);
+      modal.present();
     });
   }
 
-  addInfoWindow(marker, content){
+  addInfoWindow(marker, content) {
     let infoWindow = new google.maps.InfoWindow({
       content: content
     });

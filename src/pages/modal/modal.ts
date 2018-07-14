@@ -19,17 +19,17 @@ export class ModalPage {
   shopTitle: string;
   shopPrice: string;
   shopOpening: string;
-  constructor( public navCtrl: NavController, public viewCtrl : ViewController ,public navParams: NavParams) {
-  this.shopTitle = navParams.get('title');
-  this.shopPrice = navParams.get('price');
-  this.shopOpening = navParams.get('opening');
-  } 
-  
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams) {
+    this.shopTitle = navParams.get('title');
+    this.shopPrice = navParams.get('price');
+    this.shopOpening = navParams.get('opening');
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
 
-  closeModal(){
+  closeModal() {
     this.viewCtrl.dismiss();
   }
 }

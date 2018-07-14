@@ -1,0 +1,259 @@
+{
+  "shops": [
+    {
+      "id": "1",
+      "name": "A",
+      "address": "City Hall",
+      "location": {
+        "latitude": 40.713484,
+        "longitude": -74.006739
+      },
+      "distance": 1,
+      "price": {
+        "Man": 190,
+        "Pensonist": 170,
+        "Children": 150
+      },
+      "opening": {
+        "Monday": {
+          "start": "11:00",
+          "end": "18:00"
+        },
+        "Tuesday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Wednesday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Thursday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Friday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Saturday": null,
+        "Sunday": null
+      }
+    },
+    {
+      "id": "2",
+      "name": "B",
+      "address": "Brooklyn Bridge",
+      "location": {
+        "latitude": 40.712801,
+        "longitude": -74.004936
+      },
+      "distance": 2,
+      "price": {
+        "Man": 110,
+        "Pensonist": 100,
+        "Children": 140
+      },
+      "opening": {
+        "Monday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Tuesday": {
+          "start": "12:00",
+          "end": "18:00"
+        },
+        "Wednesday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Thursday": null,
+        "Friday": null,
+        "Saturday": null,
+        "Sunday": null
+      }
+    },
+    {
+      "id": "3",
+      "name": "C",
+      "address": "NYPD",
+      "location": {
+        "latitude": 40.712199,
+        "longitude": -74.001675
+      },
+      "distance": 3,
+      "price": {
+        "Man": 160,
+        "Pensonist": 140,
+        "Children": 190
+      },
+      "opening": {
+        "Monday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Tuesday": {
+          "start": "13:00",
+          "end": "18:00"
+        },
+        "Wednesday": null,
+        "Thursday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Friday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Saturday": null,
+        "Sunday": null
+      }
+    },
+    {
+      "id": "4",
+      "name": "D",
+      "address": "The Woolworth Building",
+      "location": {
+        "latitude": 40.712443,
+        "longitude": -74.008369
+      },
+      "distance": 4,
+      "price": {
+        "Man": 160,
+        "Pensonist": 140,
+        "Children": 190
+      },
+      "opening": {
+        "Monday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Tuesday": {
+          "start": "11:00",
+          "end": "18:00"
+        },
+        "Wednesday": null,
+        "Thursday": null,
+        "Friday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Saturday": null,
+        "Sunday": null
+      }
+    },
+    {
+      "id": "5",
+      "name": "E",
+      "address": "Foley Square",
+      "location": {
+        "latitude": 40.714541,
+        "longitude": -74.003091
+      },
+      "distance": 5,
+      "price": {
+        "Man": 160,
+        "Pensonist": 140,
+        "Children": 190
+      },
+      "opening": null
+    },
+    {
+      "id": "6",
+      "name": "F",
+      "address": "Sazon",
+      "location": {
+        "latitude": 40.715631,
+        "longitude": -74.008498
+      },
+      "distance": 6,
+      "price": {
+        "Man": 190,
+        "Pensonist": 170,
+        "Children": 150
+      },
+      "opening": null
+    },
+    {
+      "id": "7",
+      "name": "G",
+      "address": "Southbridge Towers",
+      "location": {
+        "latitude": 40.709206,
+        "longitude": -74.003434
+      },
+      "distance": 7,
+      "price": {
+        "Man": 190,
+        "Pensonist": 170,
+        "Children": 150
+      },
+      "opening": {
+        "Monday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Tuesday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Wednesday": null,
+        "Thursday": null,
+        "Friday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Saturday": null,
+        "Sunday": null
+      }
+    },
+    {
+      "id": "8",
+      "name": "H",
+      "address": "Wall St",
+      "location": {
+        "latitude": 40.707612,
+        "longitude": -74.011996
+      },
+      "distance": 8,
+      "price": {
+        "Man": 160,
+        "Pensonist": 140,
+        "Children": 190
+      },
+      "opening": null
+    },
+    {
+      "id": "9",
+      "name": "I",
+      "address": "Tribeca Grill",
+      "location": {
+        "latitude": 40.719518,
+        "longitude": -74.009807
+      },
+      "distance": 9,
+      "price": {
+        "Man": 190,
+        "Pensonist": 170,
+        "Children": 150
+      },
+      "opening": {
+        "Monday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Tuesday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Wednesday": null,
+        "Thursday": null,
+        "Friday": {
+          "start": "10:00",
+          "end": "18:00"
+        },
+        "Saturday": null,
+        "Sunday": null
+      }
+    }
+  ]
+}

@@ -6,9 +6,9 @@ import { LoadingController, Loading } from 'ionic-angular';
 @Injectable()
 export class LoadingProvider {
   private loading: Loading;
-  constructor(public loadingCtrl: LoadingController) {}
+  constructor(public loadingCtrl: LoadingController) { }
 
-  showLoading(){
+  showLoading() {
     this.loading = this.loadingCtrl.create({
       content: 'Please wait',
       dismissOnPageChange: true
@@ -16,7 +16,7 @@ export class LoadingProvider {
     this.loading.present();
   }
 
-  stopLoading(){
+  stopLoading() {
     this.loading.dismiss();
   }
 
