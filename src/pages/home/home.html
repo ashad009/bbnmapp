@@ -1,4 +1,25 @@
-<ion-tabs color="light">
-  <ion-tab [root]="tab1Root" tabTitle="Map" tabIcon="navigate"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="List" tabIcon="list"></ion-tab>
-</ion-tabs>
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Barbar List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+    <ion-item *ngFor="let shop of shops">
+        <ion-avatar item-left>
+            <ion-icon name="pin"></ion-icon>
+        </ion-avatar>
+          <h2>{{shop.name}}</h2>
+          <p>{{shop.distance}} miles</p>
+          <button ion-button clear item-end (click)="openModal(location)">
+            <ion-icon name="md-arrow-dropright" style="zoom:2.0;" color="dark"></ion-icon>
+          </button>
+    </ion-item>
+</ion-list>
+
+</ion-content>
