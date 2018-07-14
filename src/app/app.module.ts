@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http';
 import { LoadingProvider } from '../providers/loading/loading';
 import { PageNavigatorProvider } from '../providers/page-navigator/page-navigator';
 import { ModalPage } from '../pages/modal/modal';
+import { ApiProvider } from '../providers/api/api';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ModalPage } from '../pages/modal/modal';
     LocationsProvider,
     GoogleMapsProvider,
     LoadingProvider,
-    PageNavigatorProvider
+    PageNavigatorProvider,
+    ApiProvider
   ]
 })
 export class AppModule {}
