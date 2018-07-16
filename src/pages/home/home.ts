@@ -19,5 +19,8 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
+  showDetailsFor(shop){
+    alert(JSON.stringify(shop));
+  }
 
 }
