@@ -1,6 +1,7 @@
+import { LoadingProvider } from './../../providers/loading/loading';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { Component } from '@angular/core';
-import { IonicPage,Platform } from 'ionic-angular';
+import { IonicPage, Platform } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { Geolocation } from '@ionic-native/geolocation';
 @IonicPage()
@@ -14,28 +15,39 @@ export class HomePage {
     private apiProvider: ApiProvider,
     private platform: Platform,
     private diagnostic: Diagnostic,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private loadingProvider: LoadingProvider
   ) {
   }
 
   ionViewDidLoad() {
     var self = this;
+    self.loadingProvider.showLoading();
     self.platform.ready().then(() => {
       self.diagnostic.isLocationEnabled()
         .then((isAvailable) => {
-          if (isAvailable){
+          if (isAvailable) {
             self.geolocation.getCurrentPosition().then((resp) => {
               console.log(resp.coords.latitude);
               console.log(resp.coords.longitude);
-              self.apiProvider.getShopsNearMe().subscribe(data => this.shops = data.shops);
-             }).catch((error) => {
-               console.log('Error getting location', error);
-             });
+              self.loadingProvider.stopLoading();
+              self.apiProvider.getShopsNearMe()
+                .subscribe(data => this.shops = data.shops);
+            }).catch((error) => {
+              self.loadingProvider.stopLoading();
+              console.log('Error getting location', error);
+            });
           }
-          else
+          else {
+            self.loadingProvider.stopLoading();
             alert('Please Turn On Your GPS!');
+          }
+
         })
-        .catch((e) => alert(JSON.stringify(e)))
+        .catch((e) => {
+          self.loadingProvider.stopLoading();
+          alert(JSON.stringify(e));
+        })
     });
   }
 
