@@ -6,7 +6,7 @@ import { LoadingController, Loading } from 'ionic-angular';
 @Injectable()
 export class LoadingProvider {
   private loading: Loading;
-  constructor(public loadingCtrl: LoadingController) { }
+  constructor(private loadingCtrl: LoadingController) { }
 
   showLoading() {
     this.loading = this.loadingCtrl.create({

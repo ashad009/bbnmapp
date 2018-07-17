@@ -7,16 +7,17 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="list-avatar-page">
 
   <ion-list no-lines>
     <ion-item *ngFor="let shop of shops">
         <ion-avatar item-left>
-            <ion-icon name="pin"></ion-icon>
+            <img src="{{shop.logo}}">
         </ion-avatar>
-          <h2>{{shop.name}}</h2>
+          <h2>{{shop.name}}Shop</h2>
+          <h3>{{shop.address}}</h3>
           <p>{{shop.distance}} miles</p>
-          <button ion-button clear item-end (click)="openModal(location)">
+          <button ion-button clear item-end (click)="showDetailsFor(shop)">
             <ion-icon name="md-arrow-dropright" style="zoom:2.0;" color="dark"></ion-icon>
           </button>
     </ion-item>
